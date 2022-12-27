@@ -39,6 +39,7 @@ public class ConsumerWakeup {
                 kafkaConsumer.wakeup();
 
                 try {
+                    //Main threan가 종료될때 까지 기다림??
                     mainThread.join();
                 } catch(InterruptedException e) { e.printStackTrace();}
             }

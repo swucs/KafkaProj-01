@@ -26,6 +26,7 @@ public class SimpleConsumer {
         props.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "group-01");
 
+        //auto.offset.reset : consumer가 처음 topic에 접속했을 때 어디서 부터 읽을것인지 옵션 (earlist, lastest)
 
         KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<String, String>(props);
         kafkaConsumer.subscribe(List.of(topicName));
